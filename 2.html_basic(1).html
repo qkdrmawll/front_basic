@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML BASIC 1</title>
+
+</head>
+<body style="background-color: rgb(249, 226, 230);">
+<!-- <body background="/Users/qkdrmawll/programming/front_basic/images/images.jpeg"></body> -->
+    <h2>글자 styling 예제</h2>
+    <!-- 인라인 스타일링 -->
+    <p style="background-color: rgb(183, 231, 250);">1. 배경색 변경</p>
+    <p style="color: aquamarine;">2. 글자색 변경</p>
+    <p style="font-size: 20px;">3. 글자 크기 변경</p>
+    <p style="background-color: rgb(250, 231, 183); font-size: 25px; text-align: center;">4. 복합 스타일링</p>
+    <h2>link와 이미지 삽입</h2>
+    <!-- _blank : 새탭으로 이동 -->
+    
+    <div><a href="https://naver.com" target="_blank">naver</a></div>
+    <!-- alt : 이미지가 깨졌을 때 대체 문자열, 시각장애인용 reader기에서 인식 -->
+    <a href="https://naver.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMzy-Tt1qh4rv6sz-D7BttN0TKth3y-CYtbQ&s" style="border: 3px solid white;" alt="귀여운고양이"></a>
+    <h2>리스트(ol-순서가 있는, ul-순서가 없는)</h2>
+    <ol style="list-style-type: upper-roman;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ol>
+    <ul style="list-style-type: square;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ul>
+
+    <h2>테이블 예제</h2>
+    <table border="1" style="border-collapse: collapse;">
+        <caption>테이블명</caption>
+        <thead>
+        <tr>
+            <th>컬럼1</th>
+            <th>컬럼2</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+        </tr>
+        <tr>
+            <td>내용A</td>
+            <td>내용B</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table border="1" style="border-collapse: collapse;">
+        <caption>post</caption>
+        <tr>
+            <th>id</th><th>title</th><th>contents</th><th>author_email</th>
+        </tr>
+        <tr>
+            <td>1</td><td>안녕하세요</td><td>고양이입니다</td><td>cat123</td>
+        </tr>
+        <tr>
+            <td>2</td><td>안녕하세요</td><td>강아지입니다</td><td>dog123</td>
+        </tr>
+    </table>
+
+</body>
+</html>

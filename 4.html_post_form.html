@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기 폼</title>
+</head>
+<body>
+    <h2>글쓰기 폼</h2>
+    <form action="" method="post">
+        <div>
+            <label for="title">제목</label><br>
+            <input type="text" id="title" name="title">
+        </div>
+        <div>
+            <label for="contents">내용</label><br>
+            <textarea id="contents" name="contents" rows="10" cols="30"></textarea>
+        </div>
+        <div>
+            <label for="reservationYN">예약여부</label><br>
+            <input type="radio" id="reservationYN" name="reservationYN" value="yes" checked>예
+            <input type="radio" id="reservationYN" name="reservationYN" value="no">아니오
+        </div>
+        <div>
+            <label for="reservationTime">예약등록시간</label><br>
+            <input type="datetime-local" id="reservationTime" name="reservationTime">
+        </div>
+    </form>
+</body>
+</html>
