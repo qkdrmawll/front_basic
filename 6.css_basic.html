@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         p {
-            background-color: bisque;
+            background-color: rgb(196, 227, 255);
             color: grey;
             letter-spacing: 2px;
             word-spacing: px;
@@ -18,6 +18,12 @@
         .italic {font-style: italic;}
         .bigtext {font-size: 24px;}
         .smalltext {font-size: 12px;}
+        #vwvh {
+            /* 높이에 대해 1% */
+            font-size: 1vh;
+            /* 너비에 대해 1% */
+            font-size: 1vw;
+        }
     </style>
 </head>
 <body>
@@ -27,5 +33,38 @@
     <p>중첩클래스 선택자 적용</p>
     <p class="italic bigtext">클래스 선택자 적용 : font style과 font size 중첩적용1</p>
     <p class="italic smalltext">클래스 선택자 적용 : font style과 font size 중첩적용2</p>
+
+    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">font 형식 변경</p>
+
+    <!-- em : 부모요소에 대해 배수, percent : 부모요소에 대해 퍼센트 -->
+    <div style="font-size: 20px;">
+        여기는 부모 텍스트입니다
+        <div style="font-size: 1.5em;">
+            자식 텍스트는 부모 글꼴의 1.5배
+        </div>
+    </div>
+    <div style="font-size: 20px;">
+        여기는 부모 텍스트입니다
+        <div style="font-size: 150%;">
+            자식 텍스트는 부모 글꼴의 1.5배
+        </div>
+    </div>
+    <div id="vwvh">
+        vw, vh를 적용한 글꼴 크기입니다.
+    </div>
+    <div style="border: 5px solid black; width: 300px; height: 100px; margin: auto; text-align: center; place-content: center;">
+        margin, border, padding을 가진 요소
+    </div>
+    <br>
+    <div>
+        <table border="1" style=" border-collapse:collapse; margin: auto; text-align: center;">
+            <tr>
+                <th>1</th><th>1</th><th>1</th>
+            </tr>
+            <tr>
+                <td>12333</td><td>2</td><td>2</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

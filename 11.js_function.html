@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js function</title>
+    <script>
+        function basic() {
+            alert("basic");
+        }
+        const variableFunction1 = function() {
+            console.log("variableFunction1");
+        }
+        const variableFunction2 = ()=> {
+            console.log("variableFunction2");
+        }
+        const makeString = ()=>"hello"
+        function returnFunction1() {
+            console.log(makeString());
+        }
+        function paramFunction1(a,b) {
+            let total = a+b;
+            console.log(total);
+            
+        }
+        function paramFunction2(name="홍길동") {
+            console.log(name);
+        }
+        function paramFunction3(...numbers) {
+            const total = numbers.reduce((a,b)=>a+b,0);
+            console.log(total);
+        }
+        function functionWithException() {
+            // case1 : 없는 함수 실행 또는 없는 변수값 참조시 예외 발생
+            // const result = example
+            console.log();
+            // case2 : 서버요청 이후 없는 데이터 값 참조시 예외 발생
+            // const response = axios.get{"https://naver.com"}};
+            const response = {data1 : {id:1, name:"kim"}};
+            console.log(response);
+            // console.log(response.data.id);
+
+        }
+        function showPerson() {
+            const person = createPerson("은지",24);
+            person.name="홍길동";
+            console.log(person.printPerson());
+            // console.log("이름은 "+ person.name);
+            // console.log("나이는 "+ person.age);
+            // this를 붙이면 홍길동2 
+            
+        }        
+        const createPerson = (name,age) => {return {name,age, printPerson: function (){return "이름은 "+ name+ " 나이는 "+this.age}}};
+        function reload() {
+            window.location.reload();
+        }
+        function locationMove() {
+            window.location.href = "https://www.naver.com";
+        }
+        function clickEvent() {
+
+        }
+        function scrollEvent() {
+
+        }
+
+    </script>
+</head>
+<body>
+    <h2>js 기본 함수 호출</h2>
+    <button onclick="basic()">함수 호출 basic</button>
+    <button onclick="variableFunction1()">변수 함수 호출1</button>
+    <button onclick="variableFunction2()">변수 함수 호출2</button>
+    <button onclick="returnFunction1()">리턴 함수 호출1</button>
+    <button onclick="paramFunction1(1,'hong')">매개변수 있는 함수 호출1</button>
+    <button onclick="paramFunction2()">매개변수 있는 함수 호출2</button>
+    <button onclick="paramFunction3(1,2,3)">매개변수 있는 함수 호출3</button>
+    <button onclick="paramFunction3(1,2,3,4)">매개변수 있는 함수 호출3</button>
+
+    <h2>예외처리 예제</h2>
+    <button onclick="functionWithException()">예외처리함수호출</button>
+
+    <h2>객체에 있는 함수 호출</h2>
+    <button onclick="showPerson()">사람객체 생성</button>
+
+    <h2>window 객체 활용</h2>
+    <button onclick="reload()">화면새로고침</button>
+    <button onclick="locationMove()">화면이동</button>
+
+    <h2>event listener 활용</h2>
+    <button onclick="clickEvent()">클릭시 이벤트 리스너 동작</button>
+    <button id="button1">버튼</button>
+    <button onclick="scrollEvent()">스크롤시 이벤트 리스너 동작</button>
+
+    <h2>html 요소 동적으로 생성</h2>
+    <button onclick="addItem()">항목추가</button>
+    <div id="target">
+
+    </div>
+
+    <script>
+        function addItem() {
+            let myTarget = document.getElementById("target");
+            myTarget.innerHTML += "<input><br>"
+        }
+        function clickEvent() {
+            const button = document.getElementById("button1");
+            if(button) {
+                // 함수를 매개변수로 던지는 것을 callback 함수
+                // click이라는 약속된 문자열을 동작의 트리거로 사용
+                // 해당 버튼이 클릭될때 매개변수로 주어지는 함수가 실행
+                button.addEventListener('click', ()=>alert("hello world"));
+            }
+        }
+        function scrollEvent() {
+            window.addEventListener('scroll',()=>console.log("hello world"));
+        }
+    </script>
+</body>
+</html>
